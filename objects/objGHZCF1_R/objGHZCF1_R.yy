@@ -1,0 +1,42 @@
+{
+  "spriteId": {
+    "name": "sprGHZCF1_R",
+    "path": "sprites/sprGHZCF1_R/sprGHZCF1_R.yy",
+  },
+  "solid": false,
+  "visible": true,
+  "spriteMaskId": {
+    "name": "sprGHZCF1_RMASK",
+    "path": "sprites/sprGHZCF1_RMASK/sprGHZCF1_RMASK.yy",
+  },
+  "persistent": false,
+  "parentObjectId": {
+    "name": "parCollapsingFloor",
+    "path": "objects/parCollapsingFloor/parCollapsingFloor.yy",
+  },
+  "physicsObject": false,
+  "physicsSensor": false,
+  "physicsShape": 1,
+  "physicsGroup": 1,
+  "physicsDensity": 0.5,
+  "physicsRestitution": 0.1,
+  "physicsLinearDamping": 0.1,
+  "physicsAngularDamping": 0.1,
+  "physicsFriction": 0.2,
+  "physicsStartAwake": true,
+  "physicsKinematic": false,
+  "physicsShapePoints": [],
+  "eventList": [],
+  "properties": [],
+  "overriddenProperties": [
+    {"propertyId":{"name":"SpriteChunks","path":"objects/parCollapsingFloor/parCollapsingFloor.yy",},"objectId":{"name":"parCollapsingFloor","path":"objects/parCollapsingFloor/parCollapsingFloor.yy",},"value":"sprGHZCF1_RTILES","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+  ],
+  "parent": {
+    "name": "GHZ",
+    "path": "folders/Level Objects/Collapsing Floor/GHZ.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "objGHZCF1_R",
+  "tags": [],
+  "resourceType": "GMObject",
+}
