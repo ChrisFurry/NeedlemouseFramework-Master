@@ -1,7 +1,8 @@
 /// @description Draw Palette Changes
+// Code commented out due to palette shader being taken out for not having permission
 switch(room){
 	case zoneGHZ2:
-		var surface = surface_create(view_wport[0],view_hport[0]);
+		/*var surface = surface_create(view_wport[0],view_hport[0]);
 		// Change water palette
 		var palette = (round(globalTimer / 10) mod 4) + 1
 		pal_swap_set(sprGHZWaterPalette,palette,false);
@@ -12,10 +13,10 @@ switch(room){
 		pal_swap_set(sprGHZPalettes,1,false);
 		draw_surface(surface,camera_get_view_x(view_camera[0]),camera_get_view_y(view_camera[0]));
 		// Delete surface
-		surface_free(surface);
+		surface_free(surface);*/
 		break;
 	case zoneCredits:
-		var surface = surface_create(view_wport[0],view_hport[0]);
+		/*var surface = surface_create(view_wport[0],view_hport[0]);
 		// Change water palette
 		var palette = (round(globalTimer / 10) mod 4) + 1
 		pal_swap_set(sprGHZWaterPalette,palette,false);
@@ -26,7 +27,7 @@ switch(room){
 		pal_swap_set(sprGHZPalettes,2,false);
 		draw_surface(surface,camera_get_view_x(view_camera[0]),camera_get_view_y(view_camera[0]));
 		// Delete surface
-		surface_free(surface);
+		surface_free(surface);*/
 		break;
 }
-pal_swap_reset();
+//pal_swap_reset();
