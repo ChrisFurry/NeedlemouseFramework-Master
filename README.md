@@ -20,7 +20,7 @@ The code was made to be somewhat simple for people to read, along with comments,
 # Want to help?
 Dm me (Twitter or Discord) if you'd like to help, I want to make sure this framework is the best it can be!
 ***Current issues:***
-- [] Collision at high speeds sometimes allows you to clip, only in the air.
+- [ ] Collision at high speeds sometimes allows you to clip, only in the air.
 # Contact
 * Discord: ChrisFurry#0275
 * Twitter: ChrisFurry2005
