@@ -13,6 +13,7 @@ The code was made to be somewhat simple for people to read, along with comments,
 * Renegade (Helped with GHZ reshade)
 * Crazii (Sonic 64 Model used in the main menu)
 * Pixelated Pope (Palette Swap Shader, Removed from this build due to you having to pay for it, if i get permission i might put it back in)
+* Triangly (Collision tiles (only the tiles.. just the tile image) im dum and forgot to credit them for a good few days akshcljasdhfkjaslif)
 # Music
 * Sonic 1 (Green Hill Zone)
 * Sonic CD (Little Planet US)
