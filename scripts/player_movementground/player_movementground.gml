@@ -31,31 +31,35 @@ function player_movementground(){
 		// Wall Decection
 		var collwall = player_wallcollision(x + (movexspeed),y + (moveyspeed),0,0,sensor_angle,sign(movexspeed));
 		if(collwall[0]){
-			var pX = x - (cosine[sensor_angle] * 16) * sign(gspeed);
-			var pY = y + (sine[sensor_angle] * 16) * sign(gspeed);
+			var pX = x;
+			var pY = y;
 			pX = round(pX);
 			pY = round(pY);
-			for(var i = 0;i < 16 + sensor_wall;i++){
+			repeat(16){ // MOVE BACK
 				var check = player_wallcollision(pX,pY,sign(gspeed),0,sensor_angle,sign(movexspeed));
 				if(check[0]){
-					x = pX;
-					y = pY;
-					break;
-				}
-				pX += cosine[sensor_angle] * sign(gspeed);
-				pY -= sine[sensor_angle] * sign(gspeed);
+					pX -= cosine[sensor_angle] * sign(gspeed);
+					pY += sine[sensor_angle] * sign(gspeed);
+				}else break;
 			}
-			if(check[0]){
-				wall_id = check[0];
-				wall_type = check[1];
-				gspeed = 0;
-				xspeed = 0;
-				yspeed = 0;
-				dist = 0;
-				movexspeed = 0;
-				moveyspeed = 0;
-				step = 0;
+			repeat(16){ // MOVE FORWARD
+				var check = player_wallcollision(pX,pY,sign(gspeed),0,sensor_angle,sign(movexspeed));
+				if(!check[0]){
+					pX += cosine[sensor_angle] * sign(gspeed);
+					pY -= sine[sensor_angle] * sign(gspeed);
+				}else break;
 			}
+			x = round(pX); // Round and set
+			y = round(pY);
+			wall_id = collwall[0];
+			wall_type = collwall[1];
+			gspeed = 0;
+			xspeed = 0;
+			yspeed = 0;
+			dist = 0;
+			movexspeed = 0;
+			moveyspeed = 0;
+			step = 0;
 		}
 		// Move Player
 		x += movexspeed;
@@ -98,6 +102,7 @@ function player_movementground(){
 					sensor_angle = angle_wrap(round(angle / 90) * 90);
 				}else{
 					grounded = false;
+					floor_id = false;
 					floor_type = "None";
 				}
 			}else{

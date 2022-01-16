@@ -12,8 +12,8 @@ function player_ceilingcollision(x,y,xoffset,yoffset,angle){
 	var tile1 = player_checktile(x,y,-sensor_width + xoffset,-sensor_height + yoffset,angle,tileLayerNames[solidLayer]);
 	var tile2 = player_checktile(x,y,sensor_width + xoffset,-sensor_height + yoffset,angle,tileLayerNames[solidLayer]);
 	if(tile1 || tile2){
-		if(tile2 < 147)return [tile2,"Tile"];
-		if(tile1 < 147)return [tile1,"Tile"];
+		if(tile2 && tile2 < 147)return [tile2,"Tile"];
+		if(tile1 && tile1 < 147)return [tile1,"Tile"];
 	}
 	return [false,"None"];
 }

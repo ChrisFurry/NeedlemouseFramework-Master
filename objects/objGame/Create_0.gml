@@ -28,8 +28,8 @@ needle_personaltouch = true;
 // Literally all it does is make you go faster in S-Tunnels
 
 // Other Debug Stuff
-dev_menu_active = false;
-g_debug_mode = false;
+dev_menu_active = debug_mode;
+g_debug_mode = debug_mode;
 debug_view = false;
 
 // Misc

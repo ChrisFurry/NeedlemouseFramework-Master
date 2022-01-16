@@ -4,6 +4,7 @@
 /*Each character has an Animation Array,
 / It's very simple to learn.
 / If you need help, check out the Sonic 1 ANI files to kinda understand how i did it.
+/ Idk im sorry lmfao if you haven't learned already i'm horrible with explaining things.
 */
 // Animation Enum
 enum playerANI {
@@ -64,7 +65,7 @@ animation_create(array,playerANI.burnt,sprite,10,2,afEnd);
 animation_create(array,playerANI.drown,sprite,10,3,afEnd);
 
 var sprite = sprPlayer_Sonic_Victory;
-animation_create(array,playerANI.victoryJump,sprite,60,0,1,afBack,1);
+animation_create(array,playerANI.victoryJump,sprite,24,0,1,afBack,1);
 
 // Set animation array
 sonicAnimationArray = array;
