@@ -301,6 +301,7 @@
     {"id":{"name":"parBridge","path":"objects/parBridge/parBridge.yy",},"order":0,},
     {"id":{"name":"sprBuzzBomberWings","path":"sprites/sprBuzzBomberWings/sprBuzzBomberWings.yy",},"order":1,},
     {"id":{"name":"musDrowning","path":"sounds/musDrowning/musDrowning.yy",},"order":3,},
+    {"id":{"name":"player_mainactions","path":"scripts/player_mainactions/player_mainactions.yy",},"order":8,},
     {"id":{"name":"sprItem_NormalShield","path":"sprites/sprItem_NormalShield/sprItem_NormalShield.yy",},"order":3,},
     {"id":{"name":"sndCheckpoint","path":"sounds/sndCheckpoint/sndCheckpoint.yy",},"order":0,},
     {"id":{"name":"objSpecialRing_EndOLevel","path":"objects/objSpecialRing_EndOLevel/objSpecialRing_EndOLevel.yy",},"order":3,},
