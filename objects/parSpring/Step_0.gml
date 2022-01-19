@@ -7,7 +7,7 @@ switch(springDirection){
 		solid_floor = false;
 		coll = collision_rectangle(bbox_left,bbox_top - 8,bbox_right,bbox_bottom,objPlayer,true,true);
 		if(coll){
-			coll.state = playerState.Spring;
+			coll.player_is = PLRFLG_SPRING;
 			coll.grounded = false;
 			coll.yspeed = -springPower * (1 + high);
 			image_speed = 1;
@@ -44,7 +44,7 @@ switch(springDirection){
 	case 4:
 		coll = collision_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,objPlayer,true,true);
 		if(coll){
-			coll.state = playerState.Spring;
+			coll.player_is = PLRFLG_SPRING;
 			coll.grounded = false;
 			coll.dir = 1;
 			coll.yspeed = -springPower * (1 + high);
@@ -57,7 +57,7 @@ switch(springDirection){
 	case 5:
 		coll = collision_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,objPlayer,true,true);
 		if(coll){
-			coll.state = playerState.Spring;
+			coll.player_is = PLRFLG_SPRING;
 			coll.grounded = false;
 			coll.dir = -1;
 			coll.yspeed = -springPower * (1 + high);

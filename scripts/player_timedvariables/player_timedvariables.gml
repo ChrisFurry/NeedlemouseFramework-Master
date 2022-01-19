@@ -1,5 +1,5 @@
 function player_timedvariables(){
-	var hurtState = (state == playerState.Hurt || state == playerState.Dead);
+	var hurtState = ((player_is & PLRFLG_HURT) || state == playerState.Dead);
 	horizontal_control_lock = max(horizontal_control_lock - 1,0);
 	if(invincible && !hurtState){
 		inv_frames = max(inv_frames - 1,0);

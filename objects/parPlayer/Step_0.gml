@@ -23,47 +23,11 @@ if(!noclipActive){
 	physicsActive = true;
 	attacking = false;
 	player_changeSensorSize(default_sensor_width,default_sensor_height,default_sensor_wall);
-	// State Machine
-	switch(state){
-		case playerState.Default:
-			player_state_default();
-			break;
-		case playerState.Spindash:
-			player_state_spindash();
-			attacking = true;
-			break;
-		case playerState.Peelout:
-			player_state_peelout();
-			break;
-		case playerState.Spring:
-			player_state_spring();
-			ball_form = false;
-			rolling = false;
-			break;
-		case playerState.Hurt:
-			player_state_hurt();
-			ball_form = false;
-			rolling = false;
-			break;
-		case playerState.HammerDrop:
-			player_state_hammerdrop();
-			attacking = true;
-			break;
-		case playerState.Dead:
-			physicsActive = false;
-			objRoomDefiner.timer_active = false;
-			hurt = 0;
-			ball_form = false;
-			rolling = false;
-			player_state_dead();
-			break;
-		case playerState.Victory:
-			player_state_victory();
-			hurt = 0;
-			ball_form = false;
-			rolling = false;
-			objRoomDefiner.timer_active = false;
-			break;
+	// 
+	if(!(player_is & PLRFLG_DEAD)){
+		player_mainactions();
+	}else{
+		
 	}
 	// Movement
 	if(physicsActive){if(grounded){player_movementground();}else{player_movementair();}}
@@ -87,7 +51,7 @@ if(!noclipActive){
 		player_invobjcontroller();
 	}
 	// Invincibility blink
-	var hurtState = (state == playerState.Hurt || state == playerState.Dead);
+	var hurtState = ((player_is & PLRFLG_HURT) || (player_is & PLRFLG_DEAD));
 	if(invincible == 2 && round(inv_frames) mod 10 < 5 && !hurtState){
 		sprite_index = -1;
 	}
@@ -110,5 +74,6 @@ yspeed = noclipSpd * key_vir;
 gspeed = xspeed;
 grounded = false;
 solidLayer = 0;
+player_is = 0;
 visible = true;
 hurt = 0;

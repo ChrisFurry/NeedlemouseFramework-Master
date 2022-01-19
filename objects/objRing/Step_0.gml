@@ -3,7 +3,7 @@ if(!event_is_playing(false))exit;
 image_index = (globalTimer / 8);
 var obj = instance_nearest(x,y,objPlayer);
 
-if(place_meeting(x,y,obj) && obj.state != playerState.Hurt){
+if(place_meeting(x,y,obj) && !(obj.player_is & PLRFLG_HURT)){
 	create_effect(sprRingCollect,1,x,y,depth);
 	audio_stop_play_sound(sndRingCollect,1,1);
 	objGameData.player_rings[obj.player_id] ++;

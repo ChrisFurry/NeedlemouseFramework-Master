@@ -2,9 +2,8 @@
 if(!event_is_playing(false))exit;
 with(objPlayer){
 	if(instance_position(x,y,other)){
-		if(!rolling && grounded){
-			state = playerState.Default;
-			rolling = true;
+		if(!(player_is & PLRFLG_ROLLING) && grounded){
+			player_is = PLRFLG_ROLLING;
 			audio_stop_play_sound(sndPlayer_roll,1,1);
 		}
 		if(grounded && abs(gspeed) < 1){
