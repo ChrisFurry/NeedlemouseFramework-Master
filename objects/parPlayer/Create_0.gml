@@ -39,6 +39,15 @@ angle = 0;
 angle_fake = 0;
 
 // State Variables
+player_is = 0; // FLAG VARIABLE
+#macro PLRFLG_BALLFORM = 1
+#macro PLRFLG_ROLLING = 2
+#macro PLRFLG_SKIDDING = 4
+#macro PLRFLG_HURT = 8
+#macro PLRFLG_SPRING = 16
+#macro PLRFLG_SPINDASH = 32
+
+// OLD CODE?
 state = playerState.Default;
 // Default State
 horizontal_control_lock = 0;
