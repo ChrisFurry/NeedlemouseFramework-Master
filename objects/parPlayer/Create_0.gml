@@ -48,6 +48,7 @@ player_is = 0; // FLAG VARIABLE
 #macro PLRFLG_SPRING 32
 #macro PLRFLG_SPINDASH 64
 #macro PLRFLG_PEELOUT 128
+#macro PLRFLG_VICTORY 256
 
 // OLD CODE?
 state = playerState.Default;

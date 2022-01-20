@@ -29,7 +29,7 @@ function player_takedamage(){
 		exit;
 	}
 	// Die
-	if(((hurt == 1 && objGameData.player_rings[player_id] <= 0) || hurt == 2) && (player_is & PLRFLG_DEAD)){
+	if(((hurt == 1 && objGameData.player_rings[player_id] <= 0) || hurt == 2) && !(player_is & PLRFLG_DEAD)){
 		hurt = 0;
 		player_is = PLRFLG_DEAD;
 		yspeed = -8;

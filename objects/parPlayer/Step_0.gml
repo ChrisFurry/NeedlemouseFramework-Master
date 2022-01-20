@@ -24,10 +24,37 @@ if(!noclipActive){
 	attacking = false;
 	player_changeSensorSize(default_sensor_width,default_sensor_height,default_sensor_wall);
 	// 
-	if(!(player_is & PLRFLG_DEAD)){
+	var specialState = ((player_is & PLRFLG_DEAD) || (player_is & PLRFLG_VICTORY))
+	if(!specialState){
 		player_mainactions();
 	}else{
-		
+		if(player_is & PLRFLG_DEAD){ // Dead state
+			player_is = PLRFLG_DEAD;
+			physicsActive = false;
+			x += xspeed;
+			y += yspeed;
+			yspeed += grav;
+			// Funny joke
+			if(keyboard_check(objGameData.key_left) && keyboard_check(objGameData.key_right)){
+				animation = playerANI.walk;
+				animation_frame = 0;
+				dir = 0 - dir;
+			}
+			// Drown Bubbles
+			if(drowningBubbles_timer){
+				var eff = instance_create_depth(x + irandom_range(-5,5),y,0,objBubbles_Tiny);
+				if(drowningBubbles_timer > 30)eff.sprite_index = sprMediumBubbles;
+				drowningBubbles_timer --;
+			}
+			// Everything else
+			objCamera.camera_followplayer = false;
+			objCamera.player_lockedin = false;
+			if(y > objCamera.camera_y + view_hport[0] + 128){
+				state = -1;
+				exit;
+			}
+		}
+		if(player_is & PLRFLG_VICTORY)player_state_victory();
 	}
 	// Movement
 	if(physicsActive){if(grounded){player_movementground();}else{player_movementair();}}

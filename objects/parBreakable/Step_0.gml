@@ -4,7 +4,7 @@ var broke = false;
 var brokedir = false;
 var playerObj = instance_nearest(x,y,objPlayer);
 if(!playerObj)exit;
-if(playerObj.rolling){
+if((playerObj.player_is & PLRFLG_ROLLING)){
 	solid_floor = false;
 	solid_walls = false;
 	solid_ceiling = false;

@@ -7,7 +7,7 @@ function player_reset(){
 	angle = 0;
 	angle_fake = 0;
 	// State Variables
-	state = playerState.Default;
+	player_is = 0;
 	//-Default State
 	horizontal_control_lock = 0;
 	ball_form = false;
