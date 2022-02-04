@@ -45,7 +45,7 @@ switch(state){
 		if(!playerObj)exit;
 		if(playerObj.grounded || playerObj.state == -2){
 			if(playerObj.state != -2){
-				playerObj.state = playerState.Victory;
+				playerObj.state = playerObj.statevictory;
 			}
 			instance_create_depth(0,0,-1,objActClear);
 			audio_stop_play_sound(musActClear,1,1);
