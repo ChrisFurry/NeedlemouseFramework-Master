@@ -29,7 +29,7 @@ function player_drowningTimer(){
 	}
 	if(drowning_timer >= get_time_frames(0,0,30) && g_event != gameEvents.playerdead){
 		hurt = 0;
-		state = playerState.Dead;
+		state = statedead;
 		yspeed = 0;
 		xspeed = 0;
 		grounded = false;

@@ -39,7 +39,8 @@ angle = 0;
 angle_fake = 0;
 
 // State Variables
-state = playerState.Default;
+player_stateinit();
+state = stateidle;
 // Default State
 horizontal_control_lock = 0;
 ball_form = false;

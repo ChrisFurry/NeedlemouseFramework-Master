@@ -52,8 +52,8 @@ if(switchActive){
 		currentMusic = switchTo[0];
 		if(audio_exists(currentMusic)){
 			// Set Loop Point
-			if(musicLoopArray[currentMusic] != pointer_null){
-				var musicData = musicLoopArray[currentMusic];
+			var musicData = musicLoopArray[currentMusic];
+			if(is_array(musicData)){
 				musicLoopPoint = musicData[0];
 				musicLoopEnd = musicData[1];
 			}else{

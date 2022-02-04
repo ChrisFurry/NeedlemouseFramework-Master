@@ -41,7 +41,7 @@ if(!temp0){
 			y = spawny;
 			dir = spawndir;
 			visible = true;
-			if(state == -1 || state == playerState.Victory)state = 0;
+			if(state == -1 || state == statevictory)state = stateidle;
 		}
 		// Position Camera
 		cameraobj[0].camera_xtarget = player[0].x - (view_wport[0] / 2);

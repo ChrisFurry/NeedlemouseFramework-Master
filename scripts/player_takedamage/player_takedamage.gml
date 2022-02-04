@@ -1,10 +1,10 @@
 function player_takedamage(){
 	// Cancel out damage
-	if(hurt == 1 && (state == playerState.Hurt || state == playerState.Dead || invincible))hurt = 0;
+	if(hurt == 1 && (state == statehurt || state == statedead || invincible))hurt = 0;
 	// Shield Damage
 	if(hurt == 1 && currShield != 0){
 		hurt = 0;
-		state = playerState.Hurt;
+		state = statehurt;
 		yspeed = -4;
 		xspeed = sign(sign(x - hurtdir) + 0.5) * 2;
 		grounded = false;
@@ -17,7 +17,7 @@ function player_takedamage(){
 	// Damage
 	if(hurt == 1 && objGameData.player_rings[player_id] > 0){
 		hurt = 0;
-		state = playerState.Hurt;
+		state = statehurt;
 		yspeed = -4;
 		xspeed = sign(sign(x - hurtdir) + 0.5) * 2;
 		grounded = false;
@@ -31,7 +31,7 @@ function player_takedamage(){
 	// Die
 	if(((hurt == 1 && objGameData.player_rings[player_id] <= 0) || hurt == 2) && state != playerState.Dead){
 		hurt = 0;
-		state = playerState.Dead;
+		state = statedead;
 		yspeed = -8;
 		xspeed = 0;
 		grounded = false;

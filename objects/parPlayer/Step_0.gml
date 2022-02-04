@@ -24,47 +24,7 @@ if(!noclipActive){
 	attacking = false;
 	player_changeSensorSize(default_sensor_width,default_sensor_height,default_sensor_wall);
 	// State Machine
-	switch(state){
-		case playerState.Default:
-			player_state_default();
-			break;
-		case playerState.Spindash:
-			player_state_spindash();
-			attacking = true;
-			break;
-		case playerState.Peelout:
-			player_state_peelout();
-			break;
-		case playerState.Spring:
-			player_state_spring();
-			ball_form = false;
-			rolling = false;
-			break;
-		case playerState.Hurt:
-			player_state_hurt();
-			ball_form = false;
-			rolling = false;
-			break;
-		case playerState.HammerDrop:
-			player_state_hammerdrop();
-			attacking = true;
-			break;
-		case playerState.Dead:
-			physicsActive = false;
-			objRoomDefiner.timer_active = false;
-			hurt = 0;
-			ball_form = false;
-			rolling = false;
-			player_state_dead();
-			break;
-		case playerState.Victory:
-			player_state_victory();
-			hurt = 0;
-			ball_form = false;
-			rolling = false;
-			objRoomDefiner.timer_active = false;
-			break;
-	}
+	state();
 	// Movement
 	if(physicsActive){if(grounded){player_movementground();}else{player_movementair();}}
 	// Check for being hurt

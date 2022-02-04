@@ -3,7 +3,7 @@ if(!event_is_playing(false))exit;
 with(objPlayer){
 	if(instance_position(x,y,other)){
 		if(!rolling && grounded){
-			state = playerState.Default;
+			state = stateidle;
 			rolling = true;
 			audio_stop_play_sound(sndPlayer_roll,1,1);
 		}
